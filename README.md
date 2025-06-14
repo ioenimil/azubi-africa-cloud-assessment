@@ -53,7 +53,7 @@ Before diving in, ensure you have these essentials:
 <td width="50px">1️⃣</td>
 <td>
 
-**Navigate to your project**
+**Navigate to the project**
 ```bash
 cd /home/ioenimil/ENIMIL-DISK/Software Engineering/Projects/Azubi/fullstack-todo-list
 ```
@@ -76,7 +76,7 @@ docker compose up --build
 <td>3️⃣</td>
 <td>
 
-**Access your running services**
+**Access the running services**
 - 🌐 **Frontend:** [http://localhost](http://localhost) ← *Your main app*
 - 🔧 **Backend API:** [http://localhost:3000](http://localhost:3000)
 - 🗄️ **MongoDB:** `mongodb://mongo:27017/` *(internal)*
