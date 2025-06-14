@@ -257,12 +257,12 @@ docker-compose down
 
 ## 💝 Built With Love
 
-*This todo app represents modern full-stack development practices with containerized deployment.*
+*This repo modern containerized deployment.*
 
 **Tech Stack:** React • Node.js • MongoDB • Docker • Docker Compose
 
 ---
 
-*Ready to boost your productivity? Get started above! 🚀*
+*Made by Isaac Obo Enimil 🚀*
 
 </div>
