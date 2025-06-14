@@ -16,9 +16,9 @@
 
 </div>
 
-## 🎯 What This App Delivers
+## 🎯 What This Repository Delivers
 
-Transform your productivity with a sleek, full-stack todo application that combines the power of **React's dynamic frontend**, **Node.js robust backend**, and **MongoDB's flexible data storage**. Built with modern DevOps practices using Docker for seamless deployment anywhere.
+This repository **hosts** a full-stack Todo List application designed to allow users to create, manage, and organize their tasks efficiently. The application features a **React-based frontend** and a **Node.js** backend, utilizing **MongoDB** for data persistence.
 
 <details>
 <summary>🌟 <strong>Key Features</strong></summary>
