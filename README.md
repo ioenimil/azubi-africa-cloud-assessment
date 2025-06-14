@@ -255,9 +255,9 @@ docker-compose down
 
 <div align="center">
 
-## 💝 Built With Love
+## 💝 Built With Heat
 
-*This repo modern containerized deployment.*
+*Modern containerized deployment.*
 
 **Tech Stack:** React • Node.js • MongoDB • Docker • Docker Compose
 
