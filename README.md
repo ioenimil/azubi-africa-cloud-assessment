@@ -1,107 +1,268 @@
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/62269745/174906065-7bb63e14-879a-4740-849c-0821697aeec2.png#gh-light-mode-only" width="40%">
-    <img src="https://user-images.githubusercontent.com/62269745/174906068-aad23112-20fe-4ec8-877f-3ee1d9ec0a69.png#gh-dark-mode-only" width="40%">
-</p>
+<div align="center">
 
-# Full-Stack Todo List Application
+![Todo App Logo](https://user-images.githubusercontent.com/62269745/174906065-7bb63e14-879a-4740-849c-0821697aeec2.png#gh-light-mode-only)
+![Todo App Logo Dark](https://user-images.githubusercontent.com/62269745/174906068-aad23112-20fe-4ec8-877f-3ee1d9ec0a69.png#gh-dark-mode-only)
 
-This repository **hosts** a full-stack Todo List application designed to allow users to create, manage, and organize their tasks efficiently. The application features a React-based frontend and a Node.js backend, utilizing MongoDB for data persistence.
+# ✨ Full-Stack Todo List Application
 
-## Setup Instructions
+*Seamlessly organize your life with our modern, cloud-ready task management solution*
 
-### Prerequisites
-- Install Docker and Docker Compose.
-- Ensure ports 3000, 27017, and 80 are available.
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-### Build and Run Containers
-1. Navigate to the project root directory:
-   ```bash
-   cd /home/ioenimil/ENIMIL-DISK/Software Engineering/Projects/Azubi/fullstack-todo-list
-   ```
-2. Build and start the containers:
-   ```bash
-   docker compose up --build
-   ```
-3. Access the services:
-   - Backend: [http://localhost:3000](http://localhost:3000)
-   - Frontend: [http://localhost](http://localhost)
-   - MongoDB: Internal connection at `mongodb://mongo:27017/`
-4. Test container health:
-   ```bash
-   chmod +x test_containers.sh
-   ./test_containers.sh
-   ```
+---
 
-### Stop Containers
-To stop the containers, run:
+</div>
+
+## 🎯 What This App Delivers
+
+Transform your productivity with a sleek, full-stack todo application that combines the power of **React's dynamic frontend**, **Node.js robust backend**, and **MongoDB's flexible data storage**. Built with modern DevOps practices using Docker for seamless deployment anywhere.
+
+<details>
+<summary>🌟 <strong>Key Features</strong></summary>
+
+- **Lightning-fast task creation** and management
+- **Real-time updates** across all your devices  
+- **Cloud-ready architecture** with Docker containerization
+- **Scalable MongoDB** database for unlimited tasks
+- **Modern React UI** with responsive design
+- **Production-ready** with comprehensive health checks
+
+</details>
+
+---
+
+## 🚀 Quick Start Guide
+
+### 📋 Prerequisites
+
+Before diving in, ensure you have these essentials:
+
+> **Required Tools:**
+> - 🐳 **Docker** & **Docker Compose** installed ([Get Docker](https://docs.docker.com/get-docker/))
+> - 🔓 **Available ports:** `3000`, `27017`, and `80`
+
+---
+
+### ⚡ Launch Your App in 3 Steps
+
+<table>
+<tr>
+<td width="50px">1️⃣</td>
+<td>
+
+**Navigate to your project**
 ```bash
-docker-compose down
+cd /home/ioenimil/ENIMIL-DISK/Software Engineering/Projects/Azubi/fullstack-todo-list
 ```
 
-## Network and Security Configurations
+</td>
+</tr>
+<tr>
+<td>2️⃣</td>
+<td>
 
-### Network
-- All services are connected via a custom Docker network: `azubui-africa-app-network`.
+**Build & launch everything**
+```bash
+docker compose up --build
+```
+*Grab a coffee ☕ while Docker works its magic!*
 
-### Container Names
-- Backend: `azubi-africa-backend`
-- MongoDB: `azubi-africa-mongodb`
-- Frontend: `azubi-africa-frontend`
+</td>
+</tr>
+<tr>
+<td>3️⃣</td>
+<td>
 
-### Exposed Ports
-- Backend: Port `3000` (host mapped).
-- MongoDB: Port `27017` (host mapped).
-- Frontend: Port `80` (host mapped).
+**Access your running services**
+- 🌐 **Frontend:** [http://localhost](http://localhost) ← *Your main app*
+- 🔧 **Backend API:** [http://localhost:3000](http://localhost:3000)
+- 🗄️ **MongoDB:** `mongodb://mongo:27017/` *(internal)*
 
-### Environment Variables
-- **Backend**:
-  - `MONGO_URI`: MongoDB connection string.
-  - `NODE_ENV`: `production`.
-  - `PORT`: `3000`.
-- **Frontend**:
-  - `VITE_APP_BACKEND_URL`: Backend API URL.
+</td>
+</tr>
+</table>
 
-### Security
-- MongoDB is configured with `restart: always`.
-- Use `.env` files for sensitive credentials.
+### 🧪 Verify Everything Works
 
-## Troubleshooting Guide
-
-### Quick Container Health Check
-Run the included test script to verify all services are operational:
+Run our automated health check:
 ```bash
 chmod +x test_containers.sh
 ./test_containers.sh
 ```
-This script checks the connectivity of all three components.
 
-### Containers Not Starting
-- Ensure Docker is running.
-- Check for port conflicts.
+> 💡 **Pro Tip:** This script tests all three services and gives you instant feedback on your setup!
 
-### Backend Healthcheck Failing
-- View backend logs:
-  ```bash
-  docker logs azubi-africa-backend
-  ```
-- Test API connectivity:
-  ```bash
-  curl http://localhost:3000/todos
-  ```
+---
 
-### Frontend Not Loading
-- Verify backend is accessible at `http://localhost:3000`.
-- Check frontend directly:
-  ```bash
-  curl http://localhost:80
-  ```
+## 🏗️ Architecture Overview
 
-### Database Connection Issues
-- Check MongoDB logs:
-  ```bash
-  docker logs azubi-africa-mongodb
-  ```
-- Test database connection:
-  ```bash
-  nc -zv localhost 27017
-  ```
+<div align="center">
+
+```mermaid
+graph TB
+    User([👤 User]) --> Frontend[🌐 React Frontend<br/>Port 80]
+    Frontend --> Backend[⚙️ Node.js API<br/>Port 3000]
+    Backend --> Database[(🗄️ MongoDB<br/>Port 27017)]
+    
+    subgraph "Docker Network: azubi-africa-app-network"
+        Frontend
+        Backend  
+        Database
+    end
+    
+    style Frontend fill:#61DAFB,stroke:#333,stroke-width:2px,color:#000
+    style Backend fill:#339933,stroke:#333,stroke-width:2px,color:#fff
+    style Database fill:#47A248,stroke:#333,stroke-width:2px,color:#fff
+```
+
+</div>
+
+### 🏷️ Container Configuration
+
+| Component | Container Name | Port | Purpose |
+|-----------|----------------|------|---------|
+| 🌐 **Frontend** | `azubi-africa-frontend` | `80` | React UI serving your users |
+| ⚙️ **Backend** | `azubi-africa-backend` | `3000` | REST API handling business logic |
+| 🗄️ **Database** | `azubi-africa-mongodb` | `27017` | Data persistence & retrieval |
+
+---
+
+## ⚙️ Configuration Details
+
+<details>
+<summary>🔧 <strong>Environment Variables</strong></summary>
+
+### Backend Configuration
+```env
+MONGO_URI=mongodb://mongo:27017/todoapp
+NODE_ENV=production
+PORT=3000
+```
+
+### Frontend Configuration  
+```env
+VITE_APP_BACKEND_URL=http://localhost:3000
+```
+
+</details>
+
+<details>
+<summary>🔒 <strong>Security Features</strong></summary>
+
+- **Auto-restart** containers for high availability
+- **Environment-based** configuration management
+- **Network isolation** with custom Docker networks
+- **Health checks** for all critical services
+
+</details>
+
+---
+
+## 🛠️ Troubleshooting Hub
+
+### 🩺 Quick Health Check
+
+Having issues? Start here:
+```bash
+./test_containers.sh
+```
+
+### 🔍 Common Issues & Solutions
+
+<details>
+<summary>🚫 <strong>Containers won't start</strong></summary>
+
+**Check these first:**
+```bash
+# Verify Docker is running
+docker --version
+
+# Check for port conflicts  
+netstat -tlnp | grep -E "(3000|27017|80)"
+
+# View detailed logs
+docker compose logs
+```
+
+</details>
+
+<details>
+<summary>⚠️ <strong>Backend API failing</strong></summary>
+
+**Debug steps:**
+```bash
+# Check backend logs
+docker logs azubi-africa-backend
+
+# Test API directly
+curl http://localhost:3000/todos
+
+# Verify container health
+docker ps --filter "name=backend"
+```
+
+</details>
+
+<details>
+<summary>🌐 <strong>Frontend not loading</strong></summary>
+
+**Troubleshoot frontend:**
+```bash
+# Test frontend accessibility
+curl -I http://localhost:80
+
+# Check if backend is reachable
+curl http://localhost:3000/health
+
+# View frontend logs
+docker logs azubi-africa-frontend
+```
+
+</details>
+
+<details>
+<summary>🗄️ <strong>Database connection problems</strong></summary>
+
+**MongoDB diagnostics:**
+```bash
+# Check MongoDB logs
+docker logs azubi-africa-mongodb
+
+# Test database port
+nc -zv localhost 27017
+
+# Verify network connectivity
+docker network ls | grep azubi
+```
+
+</details>
+
+---
+
+## 🛑 Stopping the Application
+
+When you're done working:
+```bash
+docker-compose down
+```
+
+*This gracefully stops all containers and preserves your data.*
+
+---
+
+<div align="center">
+
+## 💝 Built With Love
+
+*This todo app represents modern full-stack development practices with containerized deployment.*
+
+**Tech Stack:** React • Node.js • MongoDB • Docker • Docker Compose
+
+---
+
+*Ready to boost your productivity? Get started above! 🚀*
+
+</div>
